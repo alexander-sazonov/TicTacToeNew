@@ -14,6 +14,19 @@ public class Board {
         }
     }
 
+   public boolean setCell(int row, int column, String mark){
+        if(row >= 0 && column >= 0 && row < 3 && column < 3){
+            if(boardArray[row][column] == "-"){
+                boardArray[row][column] = mark;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+        return true;
+   }
+
     @Override
     public String toString() {
         String boardString = "";
